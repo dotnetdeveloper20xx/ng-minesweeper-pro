@@ -1,0 +1,8 @@
+
+<div class="board" [style.gridTemplateColumns]="gridCols" role="grid" [attr.aria-rowcount]="rows" [attr.aria-colcount]="cols">
+  <ng-container *ngFor="let row of board; let ry = index">
+    <ng-container *ngFor="let tile of row; trackBy: trackByTile">
+      <app-tile [tile]="tile" role="gridcell"></app-tile>
+    </ng-container>
+  </ng-container>
+</div>

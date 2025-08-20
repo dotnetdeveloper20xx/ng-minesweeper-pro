@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root{
+  --bg: #0b1020;
+  --panel: #11183a;
+  --text: #e5e7eb;
+  --muted: #9aa3b2;
+  --tile-border: #0a1140;
+  --tile-revealed: #0e1540;
+  --tile-size: 42px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:radial-gradient(1000px 600px at 20% -10%, #1a2258, transparent),
+                                   radial-gradient(1000px 800px at 120% 10%, #0f153d, transparent),var(--bg);
+          color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+
+a{color:#b3d4ff;text-decoration:none} a:hover{text-decoration:underline}
+
+button{background:#131a45;color:var(--text);border:1px solid #1c2a5e;padding:.5rem .9rem;border-radius:10px;cursor:pointer;
+  transition:transform .06s ease, background .2s ease, border-color .2s ease;}
+button:hover{background:#172258} button:active{transform:translateY(1px)}
+
+.container{max-width:1080px;margin:24px auto;padding:0 16px}
+.panel{background:linear-gradient(to bottom right, rgba(255,255,255,.06), transparent);border:1px solid #262f62;border-radius:16px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.difficulty{display:flex;gap:8px;flex-wrap:wrap}
+.stats{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .6rem;border-radius:999px;border:1px solid #253274;background:#121a42;color:#cfe3ff;font-size:.9rem}
+
+.nav{display:flex;gap:12px;margin-bottom:12px;align-items:center}
+.nav a{padding:.45rem .7rem;border-radius:10px;border:1px solid #22306f;background:#101741}
+.nav a.active{background:#19235b}
+
+.footer{margin-top:16px;color:var(--muted);font-size:.9rem;text-align:center;opacity:.85}
+@media (max-width: 600px){ :root{ --tile-size: 36px; } }

@@ -1,0 +1,23 @@
+
+<button
+  class="tile"
+  [class.revealed]="tile.isRevealed"
+  [class.flagged]="tile.isFlagged"
+  [class.mine]="tile.isMine && tile.isRevealed"
+  [class.zero]="tile.isRevealed && tile.adjacentMines === 0 && !tile.isMine"
+  [attr.aria-pressed]="tile.isRevealed"
+  [attr.aria-label]="ariaLabel()"
+  (click)="onClick()"
+  (contextmenu)="onRightClick($event)"
+  (dblclick)="onDblClick()"
+  (auxclick)="onAuxClick($event)"
+  (keydown)="onKeyDown($event)"
+  (touchstart)="onTouchStart()"
+  (touchend)="onTouchEnd()"
+>
+  <span *ngIf="tile.isRevealed && !tile.isMine && tile.adjacentMines > 0"
+        class="num"
+        [ngClass]="numberClass(tile.adjacentMines)">{{ tile.adjacentMines }}</span>
+  <span *ngIf="tile.isRevealed && tile.isMine" class="emoji" aria-hidden="true">💣</span>
+  <span *ngIf="!tile.isRevealed && tile.isFlagged" class="emoji" aria-hidden="true">🚩</span>
+</button>

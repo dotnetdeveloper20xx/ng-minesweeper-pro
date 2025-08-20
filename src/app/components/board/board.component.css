@@ -1,0 +1,11 @@
+
+.board {
+  display: grid;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid #2a3460;
+  border-radius: 16px;
+}
